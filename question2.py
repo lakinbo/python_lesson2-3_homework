@@ -15,7 +15,7 @@
 choice = 0
 food_option = ""
 food_price = 0
-drink_choice = None
+drink_choice = ""
 drink_price = 0
 tax_rate = 0.08
 
@@ -43,12 +43,13 @@ try:
         food_price = 13.75
 
 
-
-    # while drink_choice != "yes" or drink_choice != "no":
+    while (drink_choice != "yes" or drink_choice != "no"):
     drink_choice = input("Would you like a drink? (+$2.50) (yes/no): \n").lower()
 
     if drink_choice == "yes":
         drink_price = 2.50
+    elif drink_choice == "no":
+        drink_price = 0
 
     tax = tax_rate * (food_price + drink_price)
 
