@@ -13,14 +13,16 @@
 
 pet_type = ""
 human_years = 0
+min_human_years = 1
+max_human_years = 25
 pet_years = 0
 
-try:
-    while (pet_type != "dog" or pet_type != "cat" or pet_type != "bird" or pet_type != "hamster"):
-        pet_type = input("Enter pet type (dog/cat/bird/hamster): ")#.lower()
+# try:
+    # while (pet_type != "dog" or pet_type != "cat" or pet_type != "bird" or pet_type != "hamster"):
+pet_type = input("Enter pet type (dog/cat/bird/hamster): ")#.lower()
 
-    while human_years <1 or human_years> 20:
-        human_years = int(input("Enter your pet's age in human years: "))
+while human_years < 1 or human_years > 20:
+    human_years = int(input("Enter your pet's age in human years: "))
 
     if pet_type == "dog":
         pet_years = (min(2, human_years) * 12) + (max(0, human_years - 2) * 4)
@@ -31,14 +33,14 @@ try:
     elif pet_type == "hamster":
         pet_years = human_years * 25
 
-    print("=== PET AGE CONVERSION ===")
-    print(f"Pet Type: {pet_type.title()}")
-    print(f"Human Age: {human_years} years")
-    print(f"Pet Age: {pet_years} pet years")
-    print()
-    print(f"Fun Fact: Your {pet_type.lower()} is like a {pet_years}-year-old human!")
+print("=== PET AGE CONVERSION ===")
+print(f"Pet Type: {pet_type.title()}")
+print(f"Human Age: {human_years} years")
+print(f"Pet Age: {pet_years} pet years")
+print()
+print(f"Fun Fact: Your {pet_type.lower()} is like a {pet_years}-year-old human!")
 
-except Exception as e:
-    print("Invalid input!!!")
+# except Exception as e:
+    # print("Invalid input!!!")
 
 
